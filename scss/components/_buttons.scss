@@ -1,0 +1,28 @@
+// components/_buttons.scss
+
+// Buttons:
+// .btn--default
+// .btn--success
+// .btn--error
+// .btn--warning
+// .btn--info
+// .theme__colors
+
+.btn {
+    @each $key, $value in $c_btns {
+        &--#{$key} {
+            // .btn--default
+            // .btn--success
+            // .btn--error
+            // .btn--warning
+            // .btn--info
+
+            @extend %btns;
+            
+            &.theme__colors {                
+                // assign respective bg-colors
+                background-color: $value;
+            }
+        }
+    }
+}

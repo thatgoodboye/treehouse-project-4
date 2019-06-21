@@ -1,0 +1,99 @@
+// utilites/_variables.scss
+
+// colors [required]
+
+$black      : #808080;
+$grey       : #ccc;
+$white      : #fff;
+
+$sky        : #51ddfc;
+$ocean      : #3fabca;
+$ice        : #7ee6fd;
+
+$teal       : #58e1c1;
+$riptide    : #80e8d1;
+
+$burst      : #e4757a;
+$pink       : #ec9fa3;
+
+$mango      : #fd7856;
+$tangerine  : #fd9f85;
+
+$emerald    : #63cc82;
+$vista      : #88d9a0;
+
+$purple     : #927bc1;
+$lilac      : #deb2ee;
+
+// color use
+
+$c-prim         : $teal;
+$c-sec          : $sky;
+
+$c_text         : $black;
+$c_link         : $c-sec;
+$c_brdr         : $c-prim;
+$c_brdr-img     : $grey;
+$c_btn          : $white;
+$c_nav-hover    : $white;
+$c_nav_bg-hover : $c-prim;
+$c_hdln-prim    : $c-prim;
+
+$c_btns: (
+    default    : $c-sec,
+    success    : $emerald,
+    error      : $burst,
+    warning    : $mango,
+    info       : $purple,
+);
+
+$c_grid: (
+    3   : $lilac,
+    4   : $ice,
+    5   : $vista,
+    6   : $ocean,
+    7   : $pink,
+    8   : $tangerine,
+    12  : $riptide,
+);
+
+// fonts [required]
+
+// The font family in the mockup 
+// is "Helvetica Neue" (or so the page claims)
+// and that is a liscenced font only available on 
+// apple devices so I imported a similar font.
+$ff-url     : 'https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap';
+
+$ff-stack   : "Helvetica Neue", Lato, Arial, sans-serif;
+$ff_text    : $ff-stack;
+
+$fw-light   : 300;
+$fw-norm    : 400;
+$fw-bold    : 700;
+
+// fonts use
+
+$fw_text        : $fw-norm;
+$fw_link        : $fw-bold;
+$fw_hdln-prim   : $fw-bold;
+$fw_hdln-sec    : $fw-light;
+$fw_block       : $fw_norm;
+
+$fs_text        : 1rem;
+$fs_text-lg     : 1.125em;
+$fs_hdln-prim   : 2em;
+$fs_hdln-sec    : $fs_text-lg;
+$fs_block       : 1.75em;
+
+// breakpoints [required]
+
+$break      : 769px;
+$max-width  : 1200px;
+
+// style
+
+$br         : .3125rem; // 5px
+
+$brdr       : 5px solid $c_brdr;
+$brdr-img   : 1px solid $c_brdr-img;

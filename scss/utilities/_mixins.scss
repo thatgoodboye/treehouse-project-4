@@ -1,0 +1,23 @@
+// utilities/_mixins.scss
+
+@mixin mq($bp: $break) {
+    // media query mixin [required]
+
+    @media(min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin flex(
+    $disp   : flex,
+    $dir    : null,
+    $just   : null,
+    $wrap   : null, 
+) {
+    // flexbox settings [required]
+
+    display: $disp;
+    flex-wrap: $wrap;
+    flex-direction: $dir;
+    justify-content: $just;
+}

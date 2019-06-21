@@ -1,0 +1,17 @@
+// components/_navigation.scss
+
+// Navigation:
+// .nav
+// .nav__item
+
+.nav {
+    @include flex($dir: column, $just: center);
+
+    &__item {    
+        @extend %nav-items;
+    }
+
+    @include mq() {
+        @include flex($dir: row);
+    }
+}

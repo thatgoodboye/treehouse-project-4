@@ -1,0 +1,92 @@
+// **********************************************
+// _grid.scss
+// styles related to the grid system and
+// main container.
+// major grid styles have been added here for you
+// but additional styling may be needed
+// **********************************************
+
+
+// Grid:
+//   .container
+//   .grid__row
+//   .grid__col--1
+//   .grid__col--2
+//   .grid__col--3
+//   .grid__col--4
+//   .grid__col--5
+//   .grid__col--6
+//   .grid__col--7
+//   .grid__col--8
+//   .grid__col--9
+//   .grid__col--10
+//   .grid__col--11
+//   .grid__col--12
+//   .card
+//   .centered
+//   .theme__colors
+//   (.grid__col--1, .grid__col--2, .grid__col--10, and .grid__col--11 are not used here in the HTML but would be good to include in the Sass)
+
+// grid base class
+.grid {
+  // .grid__row
+  &__row {
+    @include flex($dir: column);
+
+    // margin-bottom: 2rem;
+    margin: 1rem 0;
+
+    // NOTE: replace with media query mixin if aiming for exceeds
+    @include mq() {                  
+      @include flex($dir: row);
+    }
+  }
+
+  // .grid__col
+  &__col {
+    // create grid columns dynamically
+    // loop through each column size
+
+    @for $i from 1 through 12 {
+      // concatenate CSS selector, ie when $i = 1,
+      // selector would be .grid__col--1
+      &--#{$i} {
+
+        @extend %grid_col;
+
+        &.theme__colors {
+          // assign colors to .theme__colors labeled cols
+
+          padding           : .5em 1em;
+          background-color  : map-get($c_grid, $i);
+
+          &:last-child {
+            margin-bottom: 1rem;
+          }
+          
+          @include mq() {
+            text-align: center;
+          }
+        }
+        
+
+        @include mq() {
+          // make column width a percentage of the column number / total columns
+          flex-basis: #{$i / 12 * 100 + "%"} ;
+        }
+      }
+    }
+  }
+}
+
+// targets all elements with classes that begin with grid__col
+[class^=grid__col] {
+  // grid__col + grid__col, targets two sibling columns
+  & + & {
+    // NOTE: replace with media query mixin if aiming for exceeds
+    @include mq() { 
+      // add grid gutter
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+
+
+// placeholders
+
+%links { 
+    // required
+    
+    color           : $c_link;
+    font-weight     : $fw_link;
+}
+
+%images {
+    // required
+
+    margin      : 0 auto;
+    display     : block;
+    max-width   : 100%;
+}
+
+%nav-items {
+    // required
+    
+    font-size       : $fs_text-lg;
+    text-align      : center;
+
+    a {
+        width           : 100%;
+        height          : 100%;
+        display         : block;
+        padding         : .75em 1em;
+        border-radius   : $br;
+
+        &:hover {
+            color               : $c_nav-hover;
+            background-color    : $c_nav_bg-hover;
+        }
+    }
+}
+
+%btns {    
+    color           : $white;
+    width           : 100%;
+    margin          : 1.5rem 0;
+    border          : none;
+    display         : block;
+    padding         : .75em 1em;
+    font-size       : $fs_text-lg;
+    text-align      : center;
+    font-weight     : $fw-bold;
+    border-radius   : $br;
+    text-transform  : uppercase;
+
+    &[type='submit'] {
+        // fixed form button width
+        width: 100%;
+    }
+
+    @include mq() {
+        float: left;
+
+        // n = n btns
+        // ml = margin-left
+        // calc ( 100%w / n ) - (( ml * ( n - 1 )) / n )
+        width: calc(100% / 5 - 1.60rem);
+        
+        & + & {
+            margin-left: 2rem;
+        }
+    }
+}
+
+%grid_col {
+    padding         : 1rem;
+    margin-top      : 10px;
+    flex-basis      : 100%;
+    border-radius   : $br;
+
+    @include mq() {
+        &.centered {
+            margin-left     : auto;
+            margin-right    : auto;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+// components/_typography.scss
+
+// Typography:
+// .container
+// .link
+// .blockquote
+// .headline--primary
+// .headline--secondary
+
+// import "Helvetica Neue" -esque font
+@import url($ff-url);
+
+.container {
+    // layout settings
+    margin      : 0 auto 2rem;
+    padding     : 0 2rem;
+    max-width   : $max-width;
+
+    // text settings
+    color           : $c_text;
+    font-size       : $fs_text;
+    font-weight     : $fw_text;
+    line-height     : 1.5;
+    font-family     : $ff-stack;
+}
+
+.link {
+    @extend %links;
+}
+
+.blockquote {
+    margin          : 1.5rem;
+    font-size       : $fs_block;
+    font-style      : italic;
+    font-weight     : $fw_block;
+    line-height     : 1.1;
+    border-left     : $brdr;
+    padding-left    : 1.25rem;
+    border-radius   : $br;
+}
+
+.headline--primary {
+    color           : $c_hdln-prim;
+    margin          : 1rem 1.5rem 2rem;
+    font-size       : $fs_hdln-prim;
+    font-weight     : $fw_hdln-prim;
+    line-height     : 1.1;
+}
+
+.headline--secondary {
+    margin          : 1em 0;
+    font-size       : $fs_hdln-sec;
+    font-weight     : $fw_hdln-sec;
+    line-height     : 1.1;
+}

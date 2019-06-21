@@ -1,0 +1,23 @@
+// components/_images.scss
+
+// Image:
+// .img--logo
+// .img--frame
+// .img--avatar
+
+.img {
+    &--logo {
+        @extend %images;
+    }
+    
+    &--frame {
+        @extend %images;
+
+        border      : $brdr-img;
+        padding     : .5em;
+    }
+    
+    &--avatar {
+        @extend %images;
+    }
+}

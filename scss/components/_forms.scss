@@ -1,0 +1,29 @@
+// components/_forms.scss
+    
+// Forms:
+// .form
+// .form__label--hidden
+// .form__input
+
+.form {
+
+    &__label {
+        &--hidden {
+            display: none;
+        }
+    }
+    
+    &__input {
+        color           : inherit;
+        width           : 100%;
+        margin          : 1rem 0 0;
+        padding         : 1em;
+
+        border          : none; // reset
+        border-bottom   : $brdr;
+
+        &::placeholder {
+            opacity     : 1;
+        }
+    }
+}
